@@ -13,21 +13,20 @@ Player::Player(SDL_Renderer* renderer, const char* imgName, int x, int y, int di
     this->isHuman = false;
 }
 
-void Player::setInput(int up, int down, int left, int right) {
+void Player::setInput(int up, int down, int left, int right, int shoot) {
     
     this->isHuman = true;
     this->up = up;
     this->down = down;
     this->left = left;
     this->right = right;
-    
+    this->shoot = shoot;
 }
 
 void Player::handleInput(const Uint8* keys) {
     
     if (keys[up])
         this->y -= 1;
-        //if (collidesWith(<#Actor *#>))
     if (keys[down])
         this->y += 1;
     if (keys[left])

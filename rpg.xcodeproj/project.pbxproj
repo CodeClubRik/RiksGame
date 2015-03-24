@@ -15,7 +15,6 @@
 		38B20B381AC1DB0100B039BD /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B20B2C1AC1DB0100B039BD /* Bullet.cpp */; };
 		38B20B391AC1DB0100B039BD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B20B2E1AC1DB0100B039BD /* main.cpp */; };
 		38B20B3A1AC1DB0100B039BD /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B20B331AC1DB0100B039BD /* Player.cpp */; };
-		38B20B3B1AC1DB0100B039BD /* Weapon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B20B351AC1DB0100B039BD /* Weapon.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,8 +42,6 @@
 		38B20B2E1AC1DB0100B039BD /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
 		38B20B331AC1DB0100B039BD /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = SOURCE_ROOT; };
 		38B20B341AC1DB0100B039BD /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = SOURCE_ROOT; };
-		38B20B351AC1DB0100B039BD /* Weapon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Weapon.cpp; sourceTree = SOURCE_ROOT; };
-		38B20B361AC1DB0100B039BD /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +89,6 @@
 				38B20B2E1AC1DB0100B039BD /* main.cpp */,
 				38B20B331AC1DB0100B039BD /* Player.cpp */,
 				38B20B341AC1DB0100B039BD /* Player.h */,
-				38B20B351AC1DB0100B039BD /* Weapon.cpp */,
-				38B20B361AC1DB0100B039BD /* Weapon.h */,
 			);
 			path = rpg;
 			sourceTree = "<group>";
@@ -157,7 +152,6 @@
 				38B20B3A1AC1DB0100B039BD /* Player.cpp in Sources */,
 				38B20B381AC1DB0100B039BD /* Bullet.cpp in Sources */,
 				38B20B371AC1DB0100B039BD /* Actor.cpp in Sources */,
-				38B20B3B1AC1DB0100B039BD /* Weapon.cpp in Sources */,
 				38B20B391AC1DB0100B039BD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

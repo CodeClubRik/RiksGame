@@ -10,7 +10,6 @@
 #include <SDL2_mixer/SDL_mixer.h>
 #include <SDL2_ttf/SDL_ttf.h>
 #include <vector>
-#include "Weapon.h"
 
 #endif /* defined(__rpg__Player__) */
 
@@ -24,8 +23,9 @@ public:
     int down;
     int left;
     int right;
+    int shoot;
     bool isHuman;
-    void setInput(int,int,int,int);
+    void setInput(int,int,int,int,int);
     void handleInput(const Uint8*);
     void renderView(SDL_Renderer*, std::vector<Player*>, std::vector<Actor*>, int, int, int, int);
     bool collidesWith(Actor*);
