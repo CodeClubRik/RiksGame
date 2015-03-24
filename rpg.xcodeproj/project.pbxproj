@@ -41,10 +41,6 @@
 		38B20B2C1AC1DB0100B039BD /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = SOURCE_ROOT; };
 		38B20B2D1AC1DB0100B039BD /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = SOURCE_ROOT; };
 		38B20B2E1AC1DB0100B039BD /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
-		38B20B2F1AC1DB0100B039BD /* p1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p1.png; sourceTree = SOURCE_ROOT; };
-		38B20B301AC1DB0100B039BD /* p2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p2.png; sourceTree = SOURCE_ROOT; };
-		38B20B311AC1DB0100B039BD /* p3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p3.png; sourceTree = SOURCE_ROOT; };
-		38B20B321AC1DB0100B039BD /* p4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p4.png; sourceTree = SOURCE_ROOT; };
 		38B20B331AC1DB0100B039BD /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = SOURCE_ROOT; };
 		38B20B341AC1DB0100B039BD /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = SOURCE_ROOT; };
 		38B20B351AC1DB0100B039BD /* Weapon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Weapon.cpp; sourceTree = SOURCE_ROOT; };
@@ -94,10 +90,6 @@
 				38B20B2C1AC1DB0100B039BD /* Bullet.cpp */,
 				38B20B2D1AC1DB0100B039BD /* Bullet.h */,
 				38B20B2E1AC1DB0100B039BD /* main.cpp */,
-				38B20B2F1AC1DB0100B039BD /* p1.png */,
-				38B20B301AC1DB0100B039BD /* p2.png */,
-				38B20B311AC1DB0100B039BD /* p3.png */,
-				38B20B321AC1DB0100B039BD /* p4.png */,
 				38B20B331AC1DB0100B039BD /* Player.cpp */,
 				38B20B341AC1DB0100B039BD /* Player.h */,
 				38B20B351AC1DB0100B039BD /* Weapon.cpp */,

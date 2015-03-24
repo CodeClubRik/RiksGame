@@ -36,21 +36,21 @@ int main(int argc, const char * argv[]) {
     SDL_Renderer* renderer = NULL;
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     
-    Player p1(renderer, "/Users/Rik/Desktop/p1.png", 10,10, 90);
-    Player p2(renderer, "/Users/Rik/Desktop/p2.png", 60,10, 180);
-    Player p3(renderer, "/Users/Rik/Desktop/p3.png", 10,60, 270);
-    Player p4(renderer, "/Users/Rik/Desktop/p4.png", 60,60, 0);
+    Player p1(renderer, "p1.png", 10,10, 90);
+    Player p2(renderer, "p2.png", 60,10, 180);
+    Player p3(renderer, "p3.png", 10,60, 270);
+    Player p4(renderer, "p4.png", 60,60, 0);
     
-    Actor wall1(renderer, "/Users/Rik/Desktop/wall.png", -100, -100, 300, 20);
+    Actor wall1(renderer, "wall.png", -100, -100, 300, 20);
     wallList.push_back(&wall1);
 
-    Actor wall2(renderer, "/Users/Rik/Desktop/wall.png", -100, -100, 20, 300);
+    Actor wall2(renderer, "wall.png", -100, -100, 20, 300);
     wallList.push_back(&wall2);
     
-    Actor wall3(renderer, "/Users/Rik/Desktop/wall.png", 180, -100, 20, 300);
+    Actor wall3(renderer, "wall.png", 180, -100, 20, 300);
     wallList.push_back(&wall3);
     
-    Actor wall4(renderer, "/Users/Rik/Desktop/wall.png", -100, 180, 300, 20);
+    Actor wall4(renderer, "wall.png", -100, 180, 300, 20);
     wallList.push_back(&wall4);
     
     if (playerNum > 0) {
