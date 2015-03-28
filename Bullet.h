@@ -15,9 +15,10 @@
 
 class Bullet: public Actor  {
 public:
-    Bullet(SDL_Renderer*, const char*, int, int, int, int, int);
+    Bullet(SDL_Renderer*, const char*, int, int, int, int, int, int);
     int speed;
     int direction;
     int properties;
     void update();
+    int bulletSpeed;
 };

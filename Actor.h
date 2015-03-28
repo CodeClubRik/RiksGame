@@ -14,11 +14,12 @@
 
 class Actor {
 public:
-    Actor(SDL_Renderer*, const char*, int, int, int, int);
+    Actor(SDL_Renderer*, const char*, int, int, int, int,int);
     void render(SDL_Renderer*, int, int, int, int);
     int x;
     int y;
     int w;
     int h;
+    int dir;
     SDL_Texture* texture;
 };

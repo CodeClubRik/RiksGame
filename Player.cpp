@@ -3,17 +3,19 @@
 using namespace std;
 
 Player::Player(SDL_Renderer* renderer, const char* imgName, int x, int y, int direction)
-: Actor(renderer, imgName, x, y, 20, 20) {
+: Actor(renderer, imgName, x, y, 20, 20, 0) {
     this->score = 0;
-    this->direction = direction;
     this->up = 0;
     this->down = 0;
     this->left = 0;
     this->right = 0;
     this->isHuman = false;
+    this->shootFrequency = 20;
+    this->timeSinceLastBullet = this->shootFrequency;
+    this->shootSpeed = 4;
 }
 
-void Player::setInput(int up, int down, int left, int right, int shoot) {
+void Player::setInput(int up, int down, int left, int right, int shoot, int rotateLeft, int rotateRight) {
     
     this->isHuman = true;
     this->up = up;
@@ -21,6 +23,8 @@ void Player::setInput(int up, int down, int left, int right, int shoot) {
     this->left = left;
     this->right = right;
     this->shoot = shoot;
+    this->rotateLeft = rotateLeft;
+    this->rotateRight = rotateRight;
 }
 
 void Player::handleInput(SDL_Renderer* renderer, const Uint8* keys) {
@@ -33,10 +37,20 @@ void Player::handleInput(SDL_Renderer* renderer, const Uint8* keys) {
         this->x -= 1;
     if (keys[right])
         this->x += 1;
-    if (keys[shoot]) {
-        Bullet b1(renderer, "wall.png", this->x + (this->w / 2), this->y + (this->h / 2), 1, 0, 0);
+    if (keys[shoot] && timeSinceLastBullet > this->shootFrequency) {
+        this->timeSinceLastBullet = 0;
+        Bullet b1(renderer, "wall.png", this->x + (this->w / 2), this->y + (this->h / 2), 1, 0, this->shootSpeed, 0);
         bulletList.push_back(b1);
     }
+    if (keys[rotateLeft]) {
+        this->dir = (this->dir - 2);
+        if(this->dir < 0)
+            this->dir += 360;
+    }
+    if (keys[rotateRight])
+        this->dir = (this->dir + 2) % 360;
+    
+    cout << this->dir << endl;
 }
 
 void Player::renderView(SDL_Renderer* renderer, vector<Player*> playerList, vector<Actor*> wallList, int x, int y, int w, int h) {
@@ -76,6 +90,10 @@ void Player::renderView(SDL_Renderer* renderer, vector<Player*> playerList, vect
     for (auto itWall = begin (wallList); itWall != end (wallList); ++itWall) {
         (*itWall)->render(renderer, this->x + (this->w / 2), this->y + (this->h / 2), w, h);
     }
+}
+
+void Player::update() {
+    timeSinceLastBullet ++;
 }
 
 bool Player::collidesWith(Actor* actor) {

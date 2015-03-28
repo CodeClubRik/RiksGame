@@ -42,28 +42,28 @@ int main(int argc, const char * argv[]) {
     Player p3(renderer, "p3.png", 10, 60, 270);
     Player p4(renderer, "p4.png", 60, 60, 0);
 
-    Bullet b1(renderer, "wall.png", 10, 10, 1, 0, 0);
-    p1.bulletList.push_back(b1);
+    //Bullet b1(renderer, "wall.png", 10, 10, 1, 0, 0);
+    //p1.bulletList.push_back(b1);
     
-    Actor wall1(renderer, "wall.png", -100, -100, 300, 20);
+    Actor wall1(renderer, "wall.png", -100, -100, 300, 20, 0);
     wallList.push_back(&wall1);
 
-    Actor wall2(renderer, "wall.png", -100, -100, 20, 300);
+    Actor wall2(renderer, "wall.png", -100, -100, 20, 300, 0);
     wallList.push_back(&wall2);
     
-    Actor wall3(renderer, "wall.png", 180, -100, 20, 300);
+    Actor wall3(renderer, "wall.png", 180, -100, 20, 300, 0);
     wallList.push_back(&wall3);
     
-    Actor wall4(renderer, "wall.png", -100, 180, 300, 20);
+    Actor wall4(renderer, "wall.png", -100, 180, 300, 20, 0);
     wallList.push_back(&wall4);
     
     if (playerNum > 0) {
         playerList.push_back(&p1);
-        p1.setInput(SDL_SCANCODE_W, SDL_SCANCODE_S, SDL_SCANCODE_A, SDL_SCANCODE_D, SDL_SCANCODE_F);
+        p1.setInput(SDL_SCANCODE_W, SDL_SCANCODE_S, SDL_SCANCODE_A, SDL_SCANCODE_D, SDL_SCANCODE_F, SDL_SCANCODE_Q, SDL_SCANCODE_E);
     }
     if (playerNum > 1)
         playerList.push_back(&p2);
-        p2.setInput(SDL_SCANCODE_UP, SDL_SCANCODE_DOWN, SDL_SCANCODE_LEFT, SDL_SCANCODE_RIGHT, SDL_SCANCODE_SPACE);
+        p2.setInput(SDL_SCANCODE_UP, SDL_SCANCODE_DOWN, SDL_SCANCODE_LEFT, SDL_SCANCODE_RIGHT, SDL_SCANCODE_SPACE, SDL_SCANCODE_N, SDL_SCANCODE_M);
     if (playerNum > 2)
         playerList.push_back(&p3);
     if (playerNum > 3)
@@ -105,6 +105,8 @@ int main(int argc, const char * argv[]) {
             for (auto itB = begin((*itIn)->bulletList); itB != end((*itIn)->bulletList); ++itB) {
                 itB->update();
             }
+            
+            (*itIn)->update();
         
         }
         
