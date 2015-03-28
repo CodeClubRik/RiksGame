@@ -82,13 +82,13 @@
 		3873D8BD1A9A365E00CD09EF /* rpg */ = {
 			isa = PBXGroup;
 			children = (
+				38B20B2E1AC1DB0100B039BD /* main.cpp */,
 				38B20B2A1AC1DB0100B039BD /* Actor.cpp */,
 				38B20B2B1AC1DB0100B039BD /* Actor.h */,
-				38B20B2C1AC1DB0100B039BD /* Bullet.cpp */,
-				38B20B2D1AC1DB0100B039BD /* Bullet.h */,
-				38B20B2E1AC1DB0100B039BD /* main.cpp */,
 				38B20B331AC1DB0100B039BD /* Player.cpp */,
 				38B20B341AC1DB0100B039BD /* Player.h */,
+				38B20B2C1AC1DB0100B039BD /* Bullet.cpp */,
+				38B20B2D1AC1DB0100B039BD /* Bullet.h */,
 			);
 			path = rpg;
 			sourceTree = "<group>";

@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 Actor::Actor(SDL_Renderer* renderer, const char* imgName, int x, int y, int w, int h) {
     
     this->x = x;

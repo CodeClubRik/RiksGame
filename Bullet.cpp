@@ -9,3 +9,8 @@ Bullet::Bullet(SDL_Renderer* renderer, const char* imgName, int x, int y, int sp
     this->properties = properties;
     
 }
+
+void Bullet::update() {
+    this->x += 1;
+    this->y += 1;
+}

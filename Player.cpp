@@ -23,7 +23,7 @@ void Player::setInput(int up, int down, int left, int right, int shoot) {
     this->shoot = shoot;
 }
 
-void Player::handleInput(const Uint8* keys) {
+void Player::handleInput(SDL_Renderer* renderer, const Uint8* keys) {
     
     if (keys[up])
         this->y -= 1;
@@ -33,6 +33,10 @@ void Player::handleInput(const Uint8* keys) {
         this->x -= 1;
     if (keys[right])
         this->x += 1;
+    if (keys[shoot]) {
+        Bullet b1(renderer, "wall.png", this->x + (this->w / 2), this->y + (this->h / 2), 1, 0, 0);
+        bulletList.push_back(b1);
+    }
 }
 
 void Player::renderView(SDL_Renderer* renderer, vector<Player*> playerList, vector<Actor*> wallList, int x, int y, int w, int h) {
@@ -43,7 +47,7 @@ void Player::renderView(SDL_Renderer* renderer, vector<Player*> playerList, vect
     playerViewport.y = y;
     playerViewport.w = w;
     playerViewport.h = h;
-    SDL_RenderSetViewport( renderer, &playerViewport );
+    SDL_RenderSetViewport(renderer, &playerViewport );
     
     SDL_Rect r;
     r.x = 0;
@@ -58,6 +62,15 @@ void Player::renderView(SDL_Renderer* renderer, vector<Player*> playerList, vect
     //render all players
     for (auto it2 = begin (playerList); it2 != end (playerList); ++it2) {
         (*it2)->render(renderer, this->x + (this->w / 2), this->y + (this->h / 2), w, h);
+        
+        //render all bullets for the player
+        vector<Bullet> bList;
+        bList = (*it2)->bulletList;
+        
+        for (auto itB = begin(bList); itB != end(bList); ++itB) {
+            itB->render(renderer, this->x + (this->w / 2), this->y + (this->h / 2), w, h);
+        }
+        
     }
     //render all walls
     for (auto itWall = begin (wallList); itWall != end (wallList); ++itWall) {

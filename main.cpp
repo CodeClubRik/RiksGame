@@ -23,7 +23,6 @@ int main(int argc, const char * argv[]) {
     
     vector<Player*> playerList;
     vector<Actor*> wallList;
-    vector<Bullet*> bulletList;
     
     bool quit = false;
     
@@ -43,6 +42,8 @@ int main(int argc, const char * argv[]) {
     Player p3(renderer, "p3.png", 10, 60, 270);
     Player p4(renderer, "p4.png", 60, 60, 0);
 
+    Bullet b1(renderer, "wall.png", 10, 10, 1, 0, 0);
+    p1.bulletList.push_back(b1);
     
     Actor wall1(renderer, "wall.png", -100, -100, 300, 20);
     wallList.push_back(&wall1);
@@ -89,7 +90,7 @@ int main(int argc, const char * argv[]) {
                 
             //handle human player input
             if ((*itIn)->isHuman == true)
-                (*itIn)->handleInput(keys);
+                (*itIn)->handleInput(renderer, keys);
                 
             //render player views
             (*itIn)->renderView(renderer, playerList, wallList, (VIEW_WIDTH * positionX) + (BORDER_WIDTH * (positionX+1)), (BORDER_WIDTH * (positionY+1)) + (VIEW_HEIGHT * positionY), VIEW_WIDTH, VIEW_HEIGHT);
@@ -99,6 +100,10 @@ int main(int argc, const char * argv[]) {
             if (positionX >= 2) {
                 positionX = 0;
                 positionY++;
+            }
+            
+            for (auto itB = begin((*itIn)->bulletList); itB != end((*itIn)->bulletList); ++itB) {
+                itB->update();
             }
         
         }
