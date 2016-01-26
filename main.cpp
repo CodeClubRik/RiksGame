@@ -1,4 +1,4 @@
-//Rik's Game
+//Rik's Game...
 
 #include <iostream>
 #include <SDL2/SDL.h>
